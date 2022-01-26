@@ -114,13 +114,28 @@ const questions = [{
 {
     // ask user to describe testing process
     type: 'input',
-    name: 'title',
+    name: 'testing',
     message: 'Please describe how to test this project',
     validate: nameInput => {
         if (nameInput) {
             return true;
         } else {
             console.log('Description of testing must be provided.');
+            return false;
+        }
+    }
+},
+
+{
+    // ask user for contact info for questioning
+    type: 'input',
+    name: 'questions',
+    message: 'Please provide contact info for developers viewing your README',
+    validate: nameInput => {
+        if (nameInput) {
+            return true;
+        } else {
+            console.log('Contact information regarding questions must be provided.');
             return false;
         }
     }
@@ -140,13 +155,34 @@ const questions = [{
         }
     }
 },
-]
+];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    fs.writeFile('README.md', data, error => {
+        if (error) {
+            console.log(error);
+            return;
+        } else {
+            console.log('README.md file has now been created.')
+        }
+    })
+};
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    inquirer.prompt(questions)
+    .then(answers => {
+        if (answers) {
+            console.log('Initialization has been successful')
+        } else {
+            console.log('Intialization has failed')
+        }
+        // Generate markdown based on answers and write data to file
+        const data = generateMarkdown(answers)
+        writeToFile(data);
+    })
+};
 
 // Function call to initialize app
 init();
