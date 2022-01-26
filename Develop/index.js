@@ -1,0 +1,107 @@
+// TODO: Include packages needed for this application
+const fs = require('fs');
+const inquirer = require('inquirer');
+
+// this is to link the generateMarkdown code
+const generateMarkdown = require('./Develop/utils/generateMarkdown');
+
+// TODO: Create an array of questions for user input
+const questions = [{
+    // ask user for their github username (Questions)
+    type: 'input',
+    name: 'username',
+    message: 'Enter GitHub Username',
+    validate: nameInput => {
+        if (nameInput) {
+            return true;
+        } else {
+            console.log('Please enter your GitHub Username');
+            return false;
+        }
+    }
+},
+{
+    // ask user for github repository name
+    type: 'input',
+    name: 'title',
+    message: 'Enter your Repository name',
+    validate: nameInput => {
+        if (nameInput) {
+            return true;
+        } else {
+            console.log('Please enter your GitHub Repository name');
+            return false;
+        }
+    }
+},
+
+{
+    // ask user for description of their github repository
+    type: 'input',
+    name: 'description',
+    message: 'Please enter a description of your GitHub repository',
+    validate: nameInput => {
+        if (nameInput) {
+            return true;
+        } else {
+            console.log('Description must be provided');
+            return false;
+        }
+    }
+},
+
+{
+    // ask user about licensing
+    type: 'list',
+    name: 'license',
+    message: 'Please select a license from the list',
+    choices: ['Apache License 2.0', 'GNU General Public License', 'MIT License', 'BSD 2-Clause "Simplified" License', 'BSD 3-Clause "New" or "Revised" License', 'Boost Software License 1.0', 'Creative Commons Zero v1.0 Universal', 'Eclipse Public License 2.0', 'GNU Affero General Public License v3.0', 'GNU General Public License v2.0', 'GNU Lesser General Public License v2.1', 'Mozilla Public License 2.0', 'The Unlicense'],
+    validate: nameInput => {
+        if (nameInput) {
+            return true;
+        } else {
+            console.log('A license must be selected');
+            return false;
+        }
+    }
+},
+
+{
+    // ask user to provide installation instructions
+    type: 'input',
+    name: 'install',
+    message: 'Please provide installation instructions for your project',
+    validate: nameInput => {
+        if (nameInput) {
+            return true;
+        } else {
+            console.log('Install Instructions must be provided');
+            return false;
+        }
+    }
+},
+
+{
+    // Template
+    type: 'input',
+    name: 'title',
+    message: '',
+    validate: nameInput => {
+        if (nameInput) {
+            return true;
+        } else {
+            console.log('');
+            return false;
+        }
+    }
+},
+]
+
+// TODO: Create a function to write README file
+function writeToFile(fileName, data) {}
+
+// TODO: Create a function to initialize app
+function init() {}
+
+// Function call to initialize app
+init();
