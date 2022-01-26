@@ -15,7 +15,7 @@ const questions = [{
         if (nameInput) {
             return true;
         } else {
-            console.log('Please enter your GitHub Username');
+            console.log('Please enter your GitHub Username.');
             return false;
         }
     }
@@ -29,7 +29,7 @@ const questions = [{
         if (nameInput) {
             return true;
         } else {
-            console.log('Please enter your GitHub Repository name');
+            console.log('Please enter your GitHub Repository name.');
             return false;
         }
     }
@@ -44,7 +44,7 @@ const questions = [{
         if (nameInput) {
             return true;
         } else {
-            console.log('Description must be provided');
+            console.log('Description must be provided.');
             return false;
         }
     }
@@ -60,7 +60,7 @@ const questions = [{
         if (nameInput) {
             return true;
         } else {
-            console.log('A license must be selected');
+            console.log('A license must be selected.');
             return false;
         }
     }
@@ -75,7 +75,52 @@ const questions = [{
         if (nameInput) {
             return true;
         } else {
-            console.log('Install Instructions must be provided');
+            console.log('Install Instructions must be provided.');
+            return false;
+        }
+    }
+},
+
+{
+    // ask user to provide usage instructions
+    type: 'input',
+    name: 'usage',
+    message: 'Please provide usage instructions for your project',
+    validate: nameInput => {
+        if (nameInput) {
+            return true;
+        } else {
+            console.log('Usage instructions must be provided.');
+            return false;
+        }
+    }
+},
+
+{
+    // ask user to explain how other developers can contribute
+    type: 'input',
+    name: 'contribution',
+    message: 'Please list how others can contribute to this project',
+    validate: nameInput => {
+        if (nameInput) {
+            return true;
+        } else {
+            console.log('Contribution must be explained.');
+            return false;
+        }
+    }
+},
+
+{
+    // ask user to describe testing process
+    type: 'input',
+    name: 'title',
+    message: 'Please describe how to test this project',
+    validate: nameInput => {
+        if (nameInput) {
+            return true;
+        } else {
+            console.log('Description of testing must be provided.');
             return false;
         }
     }
