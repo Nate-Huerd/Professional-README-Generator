@@ -8,3 +8,6 @@ The goal of this project is to create a README.md file from the command line. It
 
 ## Video Tutorial
 COMING SOON
+
+## Questions
+IF you have any questions while viewing this repository, please email me at nhuerd3@gmail.com
