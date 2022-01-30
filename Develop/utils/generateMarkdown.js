@@ -102,14 +102,16 @@ function renderLicenseLink(license) {
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+// in order for badges to show up, we need to render the license badges and links (within section of README). Some stackoverflow threads helped with this
+
+function renderLicenseSection(license) {
+  {renderLicenseBadges(data.license)}
+};
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   // reference the title of each prompt
-  // in order for badges to show up, we need to render the license badges and links (within section of README). Some stackoverflow threads helped with this
   return `# ${data.title}
-  ${renderLicenseBadges(data.license)}
 
   ## Description
   ${data.description}
