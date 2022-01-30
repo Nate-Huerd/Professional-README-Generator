@@ -7,7 +7,7 @@ const generateMarkdown = require('./Develop/utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
 const questions = [{
-    // ask user for their github username (Questions)
+    // ask user for their github username (make sure this goes under a section titled: 'Questions')
     type: 'input',
     name: 'username',
     message: 'Enter GitHub Username',
@@ -21,7 +21,7 @@ const questions = [{
     }
 },
 {
-    // ask user for github repository name
+    // ask user for github repository name (this will be the Project Title (name: 'title'))
     type: 'input',
     name: 'title',
     message: 'Enter your Repository name',
@@ -69,7 +69,7 @@ const questions = [{
 {
     // ask user to provide installation instructions
     type: 'input',
-    name: 'install',
+    name: 'installation',
     message: 'Please provide installation instructions for your project',
     validate: nameInput => {
         if (nameInput) {
@@ -97,24 +97,9 @@ const questions = [{
 },
 
 {
-    // ask user to explain how other developers can contribute
-    type: 'input',
-    name: 'contribution',
-    message: 'Please list how others can contribute to this project',
-    validate: nameInput => {
-        if (nameInput) {
-            return true;
-        } else {
-            console.log('Contribution must be explained.');
-            return false;
-        }
-    }
-},
-
-{
     // ask user to describe testing process
     type: 'input',
-    name: 'testing',
+    name: 'tests',
     message: 'Please describe how to test this project',
     validate: nameInput => {
         if (nameInput) {
@@ -127,22 +112,40 @@ const questions = [{
 },
 
 {
-    // ask user for contact info for questioning
+    // ask user to explain how other developers can contribute
     type: 'input',
-    name: 'questions',
-    message: 'Please provide contact info for developers viewing your README',
+    name: 'contributing',
+    message: 'Please list how others can contribute to this project',
     validate: nameInput => {
         if (nameInput) {
             return true;
         } else {
-            console.log('Contact information regarding questions must be provided.');
+            console.log('Contribution must be explained.');
             return false;
         }
     }
 },
 
+
 {
-    // Template
+    // ask user for contact info for questioning. This section should be called 'Questions' and include github Username from above
+    type: 'input',
+    name: 'questions',
+    message: 'Please provide your email address as contact info for developers viewing your README',
+    validate: nameInput => {
+        if (nameInput) {
+            return true;
+        } else {
+            console.log('Email address for others to use regarding questions must be provided.');
+            return false;
+        }
+    }
+},
+
+    // we need a section for Table of Contents
+
+/*{
+    Template
     type: 'input',
     name: 'title',
     message: '',
@@ -154,7 +157,7 @@ const questions = [{
             return false;
         }
     }
-},
+},*/
 ];
 
 // TODO: Create a function to write README file
