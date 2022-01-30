@@ -1,7 +1,7 @@
 # Professional-README-Generator
 
 ## Description
-# Code will remain in Develop until it is complete
+### Code will remain in Develop until it is complete
 The goal of this project is to create a README.md file from the command line. It offers the user prompts and then generates the README file using the user's inputs.
 
 ## Screenshot
