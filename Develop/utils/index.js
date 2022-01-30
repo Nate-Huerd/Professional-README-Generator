@@ -141,9 +141,6 @@ const questions = [{
         }
     }
 },
-
-    // we need a section for Table of Contents
-
 /*{
     Template
     type: 'input',
