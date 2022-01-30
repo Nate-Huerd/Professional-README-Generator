@@ -176,7 +176,7 @@ function init() {
         if (answers) {
             console.log('Initialization has been successful')
         } else {
-            console.log('Intialization has failed')
+            console.log('Initialization has failed')
         }
         // Generate markdown based on answers and write data to file
         const data = generateMarkdown(answers)
