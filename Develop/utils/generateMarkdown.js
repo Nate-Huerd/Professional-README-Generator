@@ -55,34 +55,47 @@ function renderLicenseBadge(license) {
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-  if (license === '') {
-    return //link to badge
+  if (license === 'Apache License 2.0') {
+    link = '(https://opensource.org/licenses/Apache-2.0)';
+  } else if 
+  (license === 'GNU General Public License') {
+    link = '(https://www.gnu.org/licenses/gpl-3.0)';
   } else if
-  (license === '') {
-    return //link to badge
+  (license === 'MIT License') {
+    link = '(https://opensource.org/licenses/MIT)';
   } else if
-  (license === '') {
-    return //link to badge
+  (license === 'BSD 2-Clause "Simplified" License') {
+    link = '(https://opensource.org/licenses/BSD-2-Clause)';
   } else if
-  (license === '') {
-    return //link to badge
+  (license === 'BSD 3-Clause "New" or "Revised" License') {
+    link = '(https://opensource.org/licenses/BSD-3-Clause)';
   } else if
-  (license === '') {
-    return //link to badge
+  (license === 'Boost Software License 1.0') {
+    link = '(https://www.boost.org/LICENSE_1_0.txt)';
   } else if
-  (license === '') {
-    return //link to badge
+  (license === 'Creative Commons Zero v1.0 Universal') {
+    link = '(http://creativecommons.org/publicdomain/zero/1.0/)';
   } else if
-  (license === '') {
-    return //link to badge
+  (license === 'Eclipse Public License 2.0') {
+    link = '(https://opensource.org/licenses/EPL-2.0)';
   } else if
-  (license === '') {
-    return //link to badge
+  (license === 'GNU Affero General Public License v3.0') {
+    link = '(https://www.gnu.org/licenses/agpl-3.0)';
   } else if
-  (license === '') {
-    return //link to badge
+  (license === 'GNU General Public License v2.0') {
+    link = '(https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)';
   } else if
-  (license === 'null') {
+  (license === 'GNU Lesser General Public License v2.1') {
+    link = '(https://www.gnu.org/licenses/lgpl-2.1)';
+  } else if
+  (license === 'Mozilla Public License 2.0') {
+    link = '(https://opensource.org/licenses/MPL-2.0)';
+  } else if
+  (license === 'The Unlicense') {
+    link = '(https://img.shields.io/badge/licen(http://unlicense.org/)';
+  } else if
+  // need to account for "No License" again here
+  (license === 'No License') {
     return '';
   }
 };
@@ -93,7 +106,47 @@ function renderLicenseSection(license) {}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
+  // reference the title of each prompt
+  // in order for badges to show up, we need to render the license badges and links (within section of README). Some stackoverflow threads helped with this
   return `# ${data.title}
+  ${renderLicenseBadges(data.license)}
+
+  ## Description
+  ${data.description}
+
+  ## Table of Contents
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [License](#license)
+  * [Contributing](#contributing)
+  * [Tests](#tests)
+  * [Questions](#questions)
+
+  ## Installation
+  ${data.installation}
+
+  ## Usage
+  ${data.usage}
+
+  ## License
+  Licenses are as follows:
+  ${data.license}
+  ${renderLicenseLinks(data.license)}
+
+  ## Contributing
+  Please reference the following if you want to contribute to this project:
+  ${data.contributing}
+
+  ## Tests
+  If you want to run tests, please see the following:
+  ${data.tests}
+
+  ## Questions
+  If you have any questions regarding this project, please use the following information to reach me:
+  ${data.questions}
+  My GitHub: [${data.username}]
+  My Email: [${data.email}]
+  My GitHub Repository: [${data.title}]
 
 `;
 }
