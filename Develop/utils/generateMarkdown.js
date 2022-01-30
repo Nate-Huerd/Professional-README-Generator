@@ -44,6 +44,10 @@ function renderLicenseBadge(license) {
   } else if
   (license === 'The Unlicense') {
     badge = '[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)';
+  } else if
+  // need to account for "No License"
+  (license === 'No License') {
+    badge = '';
   }
   return badge;
 };
