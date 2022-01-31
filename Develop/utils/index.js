@@ -162,10 +162,12 @@ const questions = [{
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
     fs.writeFile(path.join('README.md', fileName, data, error => {
+        // if error, record the error
         if (error) {
             console.log(error);
             return;
         } else {
+            // return successful if no error occurred
             console.log('README.md file has now been created.')
         }
     })
