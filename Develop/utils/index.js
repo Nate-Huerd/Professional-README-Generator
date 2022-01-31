@@ -1,5 +1,7 @@
 // TODO: Include packages needed for this application
 const fs = require('fs');
+// per node documentation, this is required for working with files and directories
+const path = require('path')
 const inquirer = require('inquirer');
 
 // this is to link the generateMarkdown code
@@ -159,7 +161,7 @@ const questions = [{
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    fs.writeFile('README.md', data, error => {
+    fs.writeFile(path.join('README.md', fileName, data, error => {
         if (error) {
             console.log(error);
             return;
@@ -167,7 +169,7 @@ function writeToFile(fileName, data) {
             console.log('README.md file has now been created.')
         }
     })
-};
+)};
 
 // TODO: Create a function to initialize app
 function init() {
@@ -180,7 +182,7 @@ function init() {
         }
         // Generate markdown based on answers and write data to file
         const data = generateMarkdown(answers)
-        writeToFile(data);
+        writeToFile('README.md', data);
     })
 };
 
