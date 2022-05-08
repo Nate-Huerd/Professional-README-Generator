@@ -105,13 +105,15 @@ function renderLicenseLink(license) {
 // in order for badges to show up, we need to render the license badges and links (within section of README). Some stackoverflow threads helped with this
 
 function renderLicenseSection(license) {
-  {renderLicenseBadges(data.license)}
+  {renderLicenseBadge(data.license)}
+  {renderLicenseLink(data.license)}
 };
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   // reference the title of each prompt
   return `# ${data.title}
+  ${renderLicenseBadge(data.license)}
 
   ## Description
   ${data.description}
