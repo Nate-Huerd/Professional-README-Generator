@@ -134,7 +134,7 @@ function generateMarkdown(data) {
 
   ## License
   Licenses are as follows:
-  ${data.license}
+  ${renderLicenseBadge(data.license)}
   ${renderLicenseLinks(data.license)}
 
   ## Contributing
